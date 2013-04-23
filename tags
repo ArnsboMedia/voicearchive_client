@@ -1,0 +1,36 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+Client	lib/voicearchive/client.rb	/^  class Client$/;"	c	class:Voicearchive
+CustomerClient	lib/voicearchive/customer_client.rb	/^  class CustomerClient < Client$/;"	c	class:Voicearchive
+SupplierClient	lib/voicearchive/supplier_client.rb	/^  class SupplierClient < Client$/;"	c	class:Voicearchive
+TaskClient	lib/voicearchive/task_client.rb	/^  class TaskClient < Client$/;"	c	class:Voicearchive
+UserClient	lib/voicearchive/user_client.rb	/^  class UserClient < Client$/;"	c	class:Voicearchive
+Voicearchive	lib/voicearchive/client.rb	/^module Voicearchive$/;"	m
+Voicearchive	lib/voicearchive/customer_client.rb	/^module Voicearchive$/;"	m
+Voicearchive	lib/voicearchive/supplier_client.rb	/^module Voicearchive$/;"	m
+Voicearchive	lib/voicearchive/task_client.rb	/^module Voicearchive$/;"	m
+Voicearchive	lib/voicearchive/user_client.rb	/^module Voicearchive$/;"	m
+VoicearchiveClient	lib/voicearchive_client.rb	/^module VoicearchiveClient$/;"	m
+VoicearchiveClient	lib/voicearchive_client/version.rb	/^module VoicearchiveClient$/;"	m
+call	lib/voicearchive/client.rb	/^    def call(end_point, params={}, request_type="get")$/;"	f	class:Voicearchive.Client
+get_coordinators	lib/voicearchive/user_client.rb	/^    def get_coordinators$/;"	f	class:Voicearchive.UserClient
+get_customers	lib/voicearchive/customer_client.rb	/^    def get_customers(params={})$/;"	f	class:Voicearchive.CustomerClient
+get_delete_request	lib/voicearchive/client.rb	/^    def get_delete_request(url, params={})$/;"	f	class:Voicearchive.Client
+get_get_request	lib/voicearchive/client.rb	/^    def get_get_request(url, params={})$/;"	f	class:Voicearchive.Client
+get_post_request	lib/voicearchive/client.rb	/^    def get_post_request(url, params={})$/;"	f	class:Voicearchive.Client
+get_put_request	lib/voicearchive/client.rb	/^    def get_put_request(url, params={})$/;"	f	class:Voicearchive.Client
+get_supplier_demo_types	lib/voicearchive/supplier_client.rb	/^    def get_supplier_demo_types()$/;"	f	class:Voicearchive.SupplierClient
+get_supplier_languages	lib/voicearchive/supplier_client.rb	/^    def get_supplier_languages$/;"	f	class:Voicearchive.SupplierClient
+get_supplier_search_options	lib/voicearchive/supplier_client.rb	/^    def get_supplier_search_options$/;"	f	class:Voicearchive.SupplierClient
+get_suppliers	lib/voicearchive/supplier_client.rb	/^    def get_suppliers$/;"	f	class:Voicearchive.SupplierClient
+get_url_object	lib/voicearchive/client.rb	/^    def get_url_object(end_point)$/;"	f	class:Voicearchive.Client
+initialize	lib/voicearchive/client.rb	/^    def initialize(api_key='')$/;"	f	class:Voicearchive.Client
+search_suppliers	lib/voicearchive/supplier_client.rb	/^    def search_suppliers(params)$/;"	f	class:Voicearchive.SupplierClient
+set_request_authentication	lib/voicearchive/client.rb	/^    def set_request_authentication(request)$/;"	f	class:Voicearchive.Client
+set_simple_endpoint_default_values	lib/voicearchive/client.rb	/^    def set_simple_endpoint_default_values(params)$/;"	f	class:Voicearchive.Client
+set_supplier_on_task	lib/voicearchive/task_client.rb	/^    def set_supplier_on_task(task_id, supplier_id)$/;"	f	class:Voicearchive.TaskClient
+set_task_data	lib/voicearchive/task_client.rb	/^    def set_task_data(task_id, supplier_id, comments, script)$/;"	f	class:Voicearchive.TaskClient
