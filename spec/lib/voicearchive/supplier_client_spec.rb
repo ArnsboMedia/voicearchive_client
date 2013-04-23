@@ -1,3 +1,4 @@
+require 'spec_helper'
 require 'webmock/rspec'
 require 'voicearchive/supplier_client'
 describe Voicearchive::SupplierClient do
