@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = VoicearchiveClient::VERSION
   spec.authors       = ["Claus Witt"]
   spec.email         = ["claus@wittnezz.dk"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
+  spec.description   = %q{Voicearchive api client}
+  spec.summary       = %q{Voicearchive api client}
   spec.homepage      = ""
   spec.license       = "MIT"
 
