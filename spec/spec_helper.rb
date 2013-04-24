@@ -1,6 +1,7 @@
 require 'webmock/rspec'
 require 'vcr'
 
+require 'yarjuf'
 require 'simplecov'
 SimpleCov.start
 
