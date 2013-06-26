@@ -7,10 +7,11 @@ module Voicearchive
     end
 
     def get_client name
-      name = "#{name}_client"
-      require "voicearchive/#{name}"
-      constant_name = "Voicearchive::#{name.camelize}"
-      constant_name.constantize.new(api_key)
+      name = name.to_s # allow symbols to be stringified
+      name = "#{name}_client" # suffix with client
+      require "voicearchive/#{name}" # require the file
+      constant_name = "Voicearchive::#{name.camelize}" # the constant name of the class (in the Voicearchive module)
+      constant_name.constantize.new(api_key) # return the new class, with the correct api_key
     end
   end
 end
