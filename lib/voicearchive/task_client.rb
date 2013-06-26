@@ -10,7 +10,7 @@ module Voicearchive
       JSON.parse(response.body)
     end
     def get_task(task_id)
-      response = call("task/#{task_id}")
+      response = call("ordertask/#{task_id}")
       JSON.parse(response.body)
     end
   end
