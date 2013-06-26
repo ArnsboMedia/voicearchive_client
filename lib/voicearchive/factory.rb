@@ -1,4 +1,4 @@
-require 'activesupport/lib/active_support/inflector/inflections'
+require 'active_support/core_ext/string/inflections'
 module Voicearchive
   class Factory
     attr_reader :api_key
