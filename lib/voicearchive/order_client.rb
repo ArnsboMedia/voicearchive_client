@@ -14,9 +14,7 @@ module Voicearchive
 
     def task_with_order(task_id, customer_id=false)
       task = task_client.get_task(task_id)
-      puts task.to_json
-      order = get_order(task['order_id'].to_i)
-      puts order.to_json
+      order = get_order(task['orderid'].to_i)
       if customer_id
         if order['customer'].to_i != customer_id.to_i
           raise 'Customer does not match'
