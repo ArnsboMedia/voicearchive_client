@@ -1,4 +1,5 @@
 require 'voicearchive/client'
+require 'voicearchive/task_client'
 module Voicearchive
   class OrderClient < Client
     def get_order(order_id)
