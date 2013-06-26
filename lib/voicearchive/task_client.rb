@@ -8,6 +8,10 @@ module Voicearchive
     def set_task_data(task_id, supplier_id, comments, script)
       response = call("task/#{task_id}/SetTaskData", {:supplierId=>supplier_id, :comments=>comments, :script=>script}, 'put')
       JSON.parse(response.body)
-    end    
+    end
+    def get_task(task_id)
+      response = call("task/#{task_id}")
+      JSON.parse(response.body)
+    end
   end
 end
