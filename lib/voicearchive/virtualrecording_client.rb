@@ -1,4 +1,4 @@
-require './voicearchive/client'
+require 'voicearchive/client'
 module Voicearchive
   class VirtualrecordingClient < Client
     def get_virtual_recording id
