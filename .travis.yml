@@ -1,0 +1,3 @@
+language: ruby
+env:
+script: bundle exec rspec
