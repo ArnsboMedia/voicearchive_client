@@ -5,12 +5,16 @@ require "uri"
 module Voicearchive
   class Client
     attr_reader :api_key
+    attr_accessor :version
+
+
     @@host_name = 'system.voicearchive.com'
-    @@rest_path = 'rest/v1'
+    @@rest_path = 'rest'
     @@auth_header = 'X-API-KEY'
 
-    def initialize(api_key='')
+    def initialize(api_key='', version=1)
       @api_key = api_key
+      @version = version
     end
 
     def call(end_point, params={}, request_type="get")
@@ -30,7 +34,7 @@ module Voicearchive
     private
 
     def get_url_object(end_point)
-      URI.parse("http://#{@@host_name}/#{@@rest_path}/#{end_point}/")
+      URI.parse("http://#{@@host_name}/#{@@rest_path}/v#{@version.to_s}/#{end_point}/")
     end
 
     def get_get_request(url, params={})
