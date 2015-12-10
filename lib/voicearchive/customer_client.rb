@@ -11,7 +11,7 @@ module Voicearchive
       response = call("customer/#{id}", params)
       JSON.parse(response.body)
     end
-    def update_customer(customer_id, params = {})
+    def update_customer(id, params = {})
       response = call("customer/#{id}", params, "put")
       JSON.parse(response.body)
     end
