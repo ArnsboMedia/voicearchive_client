@@ -8,7 +8,7 @@ module Voicearchive
       end
 
       def mark_orders_invoiced orders
-        response = call('invoicing', orders, 'post')
+        response = call('invoicing', orders, 'put')
         JSON.parse(response.body)
       end
     end
