@@ -8,7 +8,7 @@ module Voicearchive
     attr_accessor :version
 
 
-    @@host_name = 'localhost:8081'
+    @@host_name = 'system.voicearchive.com'
     @@rest_path = 'rest'
     @@auth_header = 'X-API-KEY'
 
