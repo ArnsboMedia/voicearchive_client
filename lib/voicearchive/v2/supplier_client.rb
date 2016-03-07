@@ -12,8 +12,7 @@ module Voicearchive
         JSON.parse(response.body)
       end
 
-      # ex. "get_supplier_currency(123)" matches "supplier/123/currency"
-      def self.method_missing(method_sym, *arguments, &block)
+      def method_missing(method_sym, *arguments, &block)
         if method_sym.to_s =~ /^get_supplier_(.*)$/ && subtasks.include?(method_sym)
           response = call("supplier/#{arguments.first}/#{$1}")
           JSON.parse(response.body)
@@ -22,7 +21,7 @@ module Voicearchive
         end
       end
 
-      def self.subtasks
+      def subtasks
         [
           :ages,
           :attribute,
