@@ -7,14 +7,14 @@ module Voicearchive
         JSON.parse(response.body)
       end
 
-      def get_supplier(supplier_id)
+      def get_supplier(id)
         response = call("supplier/#{id}")
         JSON.parse(response.body)
       end
 
-      # Matches "supplier/123/demo", "supplier/123/currency", etc.
+      # ex. "get_supplier_currency(123)" matches "supplier/123/currency"
       def self.method_missing(method_sym, *arguments, &block)
-        if method_sym.to_s =~ /^get_supplier__(.*)$/ && subtasks.include?(method)
+        if method_sym.to_s =~ /^get_supplier_(.*)$/ && subtasks.include?(method_sym)
           response = call("supplier/#{arguments.first}/#{$1}")
           JSON.parse(response.body)
         else
