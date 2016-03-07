@@ -13,8 +13,9 @@ module Voicearchive
       end
 
       def method_missing(method_sym, *arguments, &block)
-        if method_sym.to_s =~ /^get_supplier_(.*)$/ && subtasks.include?(method_sym)
-          response = call("supplier/#{arguments.first}/#{$1}")
+        subtask = method_sym.to_s.split('get_supplier_')[-1]
+        if subtask.include?(subtask)
+          response = call("supplier/#{arguments.first}/#{subtask}")
           JSON.parse(response.body)
         else
           super
