@@ -28,6 +28,11 @@ module Voicearchive
         end
       end
 
+      def get_supplier_demo_types()
+        response = call('supplier/demotypes')
+        JSON.parse(response.body)
+      end
+
       def subtasks
         [
           :ages,
