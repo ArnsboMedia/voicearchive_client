@@ -2,6 +2,12 @@ require 'voicearchive/client'
 module Voicearchive
   module V2
     class SupplierClient < Client
+      def search_suppliers(params)
+        params[:includeRelations] = 1
+        response = call('supplier', params)
+        JSON.parse(response.body)
+      end
+
       def get_suppliers
         response = call('supplier')
         JSON.parse(response.body)
