@@ -9,7 +9,7 @@ module Voicearchive
       end
 
       def get_suppliers
-        response = call('supplier', {includeRelations: 1})
+        response = call('supplier', {:includeRelations=>1})
         JSON.parse(response.body)
       end
 
