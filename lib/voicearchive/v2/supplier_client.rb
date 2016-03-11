@@ -1,4 +1,4 @@
-require 'voicearchive/client'
+require 'voicearchive/v2/client'
 module Voicearchive
   module V2
     class SupplierClient < Client
