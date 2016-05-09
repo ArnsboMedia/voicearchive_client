@@ -3,6 +3,11 @@ require 'voicearchive/task_client'
 
 module Voicearchive
   class OrderClient < Client
+    def get_orders(params = {})
+      response = call("order", params)
+      JSON.parse(response.body)
+    end
+
     def get_order(order_id, params = {})
       response = call("order/#{order_id}", params)
       JSON.parse(response.body)
@@ -10,11 +15,6 @@ module Voicearchive
 
     def update_order(order_id, params = {})
       response = call("order/#{order_id}", params, 'put')
-      JSON.parse(response.body)
-    end
-
-    def get_order_tasks(order_id, params = {})
-      response = call("order/#{order_id}/tasks", params)
       JSON.parse(response.body)
     end
 
