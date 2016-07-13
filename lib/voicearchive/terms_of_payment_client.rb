@@ -9,7 +9,7 @@ module Voicearchive
 
     def update_terms_of_payment(id, params = {})
       response = call("TermOfPayment/#{id}", params, 'put')
-      JSON.parse(response)
+      JSON.parse(response.body)
     end
   end
 end
