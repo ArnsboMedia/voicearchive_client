@@ -34,7 +34,7 @@ module Voicearchive
     private
 
     def get_url_object(end_point)
-      URI.parse("http://#{@@host_name}/#{@@rest_path}/v#{@version.to_s}/#{end_point}/")
+      URI.parse("https://#{@@host_name}/#{@@rest_path}/v#{@version.to_s}/#{end_point}/")
     end
 
     def get_get_request(url, params={})
