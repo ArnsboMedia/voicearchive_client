@@ -8,13 +8,13 @@ module Voicearchive
     attr_accessor :version
 
 
-    @@host_name = 'system.voicearchive.com'
     @@rest_path = 'rest'
     @@auth_header = 'X-API-KEY'
 
-    def initialize(api_key='', version=1)
+    def initialize(api_key = '', version = 1, host = 'https://system.voicearchive.com')
       @api_key = api_key
       @version = version
+      @host = host
     end
 
     def call(end_point, params={}, request_type="get")
@@ -22,7 +22,12 @@ module Voicearchive
       http = Net::HTTP.new url.host, url.port
       http.use_ssl = true
       http.start do |http|
-        http.use_ssl = true
+
+        if url.scheme == 'https'
+          http.use_ssl = true
+          http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+        end
+
         http.request(self.send("get_#{request_type.downcase}_request".to_sym,url, params))
       end
     end
@@ -37,7 +42,7 @@ module Voicearchive
     private
 
     def get_url_object(end_point)
-      URI.parse("https://#{@@host_name}/#{@@rest_path}/v#{@version.to_s}/#{end_point}/")
+      URI.parse("#{@host}/#{@@rest_path}/v#{@version.to_s}/#{end_point}/")
     end
 
     def get_get_request(url, params={})
