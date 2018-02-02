@@ -20,7 +20,7 @@ module Voicearchive
     def call(end_point, params={}, request_type="get")
       url = get_url_object(end_point)
       http = Net::HTTP.new url.host, url.port
-      http.use_ssl = true
+      http.use_ssl = false
       http.start do |http|
 
         if url.scheme == 'https'
