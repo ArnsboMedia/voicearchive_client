@@ -23,5 +23,14 @@ module Voicearchive
       response = call("ordertask/#{task_id}")
       JSON.parse(response.body)
     end
+
+    def count_tasks(search_options)
+      response = call("task", {
+        count: true,
+        search: search_options
+      }, 'get')
+
+      JSON.parse(response.body)["count"].to_i
+    end
   end
 end
