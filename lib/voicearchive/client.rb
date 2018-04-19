@@ -7,7 +7,6 @@ module Voicearchive
     attr_reader :api_key
     attr_accessor :version
 
-
     @@rest_path = 'rest'
     @@auth_header = 'X-API-KEY'
 
@@ -21,13 +20,12 @@ module Voicearchive
       url = get_url_object(end_point)
       http = Net::HTTP.new url.host, url.port
       http.use_ssl = false
+      if url.scheme == 'https'
+        http.use_ssl = true
+        http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+      end
+
       http.start do |http|
-
-        if url.scheme == 'https'
-          http.use_ssl = true
-          http.verify_mode = OpenSSL::SSL::VERIFY_NONE
-        end
-
         http.request(self.send("get_#{request_type.downcase}_request".to_sym,url, params))
       end
     end
