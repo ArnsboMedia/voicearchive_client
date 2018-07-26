@@ -24,6 +24,14 @@ module Voicearchive
       JSON.parse(response.body)
     end
 
+    def get_tasks(search_options, options)
+      response = call('ordertask', options.merge({
+        search: search_options,
+      }), 'get')
+
+      JSON.parse(response.body)
+    end
+
     def count_tasks(search_options)
       response = call("task", {
         count: true,
