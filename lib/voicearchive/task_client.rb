@@ -32,11 +32,9 @@ module Voicearchive
       JSON.parse(response.body)
     end
 
-    def count_tasks(search_options)
-      response = call("task", {
-        count: true,
-        search: search_options
-      }, 'get')
+    def count_tasks(options = {})
+      options[:count] = true
+      response = call("task", options, 'get')
 
       JSON.parse(response.body)["count"].to_i
     end
