@@ -32,6 +32,14 @@ module Voicearchive
       JSON.parse(response.body)
     end
 
+    def search_tasks(search_options, options)
+      response = call('ordertask/search', options.merge({
+        search: search_options,
+      }), 'post')
+
+      JSON.parse(response.body)
+    end
+
     def count_tasks(options = {})
       options[:count] = true
       response = call("task", options, 'get')
