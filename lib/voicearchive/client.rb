@@ -2,6 +2,8 @@ require "active_support/core_ext/object/to_query"
 require "json"
 require "net/http"
 require "uri"
+require "openssl"
+
 module Voicearchive
   class Client
     attr_reader :api_key
@@ -19,6 +21,7 @@ module Voicearchive
     def call(end_point, params={}, request_type="get")
       url = get_url_object(end_point)
       http = Net::HTTP.new url.host, url.port
+      http.read_timeout = 360
       http.use_ssl = false
       if url.scheme == 'https'
         http.use_ssl = true
