@@ -53,6 +53,15 @@ module Voicearchive
       return json unless json.key?('count')
       json['count'].to_i
     end
+
+    def get_products(order_id)
+      response = call("order/#{order_id}/products")
+      JSON.parse(response.body)
+    end
+
+    def get_services(order_id)
+      response = call("order/#{order_id}/services")
+      JSON.parse(response.body)
     end
 
     private
