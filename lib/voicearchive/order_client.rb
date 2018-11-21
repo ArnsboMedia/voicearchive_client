@@ -49,7 +49,10 @@ module Voicearchive
       options[:count] = true
       response = call('order', options, 'get')
 
-      JSON.parse(response.body)['count'].to_i
+      json = JSON.parse(response.body)
+      return json unless json.key?('count')
+      json['count'].to_i
+    end
     end
 
     private
