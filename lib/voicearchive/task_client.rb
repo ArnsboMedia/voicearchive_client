@@ -11,10 +11,10 @@ module Voicearchive
       JSON.parse(response.body)
     end
 
-    def create_retake(task_id, reason_id)
-      response = call("task/#{task_id}/create-retake", {
+    def create_retake(task_id, reason_id, params = {})
+      response = call("task/#{task_id}/create-retake", params.merge({
         reasonId: reason_id
-      }, 'put');
+      }), 'put');
 
       JSON.parse(response.body)
     end
