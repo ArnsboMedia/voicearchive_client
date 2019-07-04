@@ -1,29 +1,34 @@
-# VoicearchiveClient
+# VoiceArchive Client Gem [![Build Status](https://travis-ci.com/ArnsboMedia/voicearchive_client.svg?branch=master)](https://travis-ci.com/ArnsboMedia/voicearchive_client)
 
-TODO: Write a gem description
+VoiceArchive API client gem, for use i Ruby projects. The projects implements some of the exposed API endpoint, from [Arnsbo Media Engine](https://github.com/ArnsboMedia/systemet).
+
+## Requirements
+
+- [Ruby](https://www.ruby-lang.org/en/news/2014/11/13/ruby-1-9-3-p551-is-released/) 1.9.3
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
-    gem 'voicearchive_client'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install voicearchive_client
+```shell
+$ scripts/setup
+```
 
 ## Usage
 
-TODO: Write usage instructions here
+`scripts/server` will start an `irb` console, to play around with the Gem:
 
-## Contributing
+```shell
+$ scripts/server
+```
 
-1. Fork it
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+To use in an applicaiton, add this line to the Gemfile:
+
+```sh
+gem 'voicearchive_client', git: 'https://github.com/ArnsboMedia/voicearchive_client.git'
+```
+.. and then run `$ bundle` :rocket:
+
+## Test
+
+```shell
+$ scripts/test
+```
