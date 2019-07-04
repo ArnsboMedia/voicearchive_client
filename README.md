@@ -14,7 +14,7 @@ $ scripts/setup
 
 ## Usage
 
-Run `irb` to play around with the Gem:
+`scripts/server` will start an `irb` console, to play around with the Gem:
 
 ```shell
 $ scripts/server
